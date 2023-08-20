@@ -10,7 +10,7 @@ export const getAllUser = async (req, res, next) => {
     } catch (err) {
         console.error(err);
         
-        return res.status(500).json({ message: 'Internal Server Error' });
+        return res.status(500).json({ message: 'Internal nhi aa rha bhai Server Error' });
     }
 };
 
@@ -33,6 +33,7 @@ export const sendAllUser = async (req, res, next) => {
         // Respond with the saved user data
         res.status(201).json(savedUser);
     } catch (error) {
-        res.status(500).json({ error: 'Server error' });
+        console.error(error); // Log the error for debugging
+        res.status(500).json({ error: 'Server nhi aa rha re error', message: error.message });
     }
 };
