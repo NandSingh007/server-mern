@@ -18,4 +18,4 @@ const bookMovieSchema = new mongoose.Schema({
 });
 
 // Create and export the 'bookmovies' model based on the schema
-export const bookmovies = mongoose.model('bookmovies', bookMovieSchema);
+export const bookmovies = mongoose.model('bookmovietickets', bookMovieSchema);
