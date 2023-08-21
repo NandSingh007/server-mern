@@ -17,12 +17,16 @@ app.use(cors());
 
 // Use the defined routes
 app.use('/api', route);
-
-// Connect to MongoDB using the provided configuration
-mongoose.connect(config.mongoURI, {
+const option = {
+  auth:{
+    username:process.env.db_username,
+    password:process.env.db_password,
+  },
   useNewUrlParser: true,
   useUnifiedTopology: true,
-})
+}
+// Connect to MongoDB using the provided configuration
+mongoose.connect(config.mongoURI,option)
   .then(() => {
     console.log('Connected to MongoDB');
   })
